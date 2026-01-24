@@ -19,6 +19,11 @@ Convert PDFs, EPUBs, DOCX, DOC, and TXT files into high-quality audiobooks using
 - 📊 **Progress Tracking**: Real-time conversion progress with time estimates
 - 🧹 **Auto Cleanup**: Automatic cleanup of temporary files, even on failure
 
+## 🔊 Audio Demo
+
+🎧 **Sample Output**  
+[▶️ Click here to listen](https://github.com/WhiskeyCoder/Qwen3-Audiobook-Converter/blob/main/sample/test_audio.mp3)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
