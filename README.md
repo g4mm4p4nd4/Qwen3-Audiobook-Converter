@@ -350,10 +350,96 @@ pip install -r requirements.txt
 
 # Make your changes
 # Test thoroughly
-# Submit PR
+# 
+## Overview & Purpose
+
+Qwen Audiobook Converter turns text documents—including PDFs, EPUBs, DOCX/DOC, and TXT files—into high-quality audiobooks using the open-source Qwen3 TTS Voice Model. The project exists to make audiobook creation accessible and efficient, offering both built-in speakers and voice cloning for customized narration.
+
+## Features & Tech Stack
+
+### Key Features
+- Dual voice modes: built-in professional speakers (Ryan, Serena, Aiden, etc.) and voice cloning from a reference audio sample.
+- Multi-format support: accepts TXT, PDF, EPUB, DOCX and legacy DOC files.
+- Intelligent chunking and caching for efficient processing and natural sentence boundaries.
+- Automatic transcription and error handling for reliable conversions.
+- Progress tracking and cleanup of temporary files.
+
+### Tech Stack
+| Technology | Role |
+|-----------|------|
+| Python 3.8+ | Core programming language |
+| Qwen3 TTS Model | Voice synthesis and cloning |
+| Gradio | TTS API interface (voice model server) |
+| FFmpeg | Audio processing and conversion |
+| PyPDF2, ebooklib, python-docx | Document parsing |
+| NumPy & pydub | Audio manipulation |
+
+## Installation & Usage
+
+Follow these steps to set up and run the converter locally:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/WhiskeyCoder/Qwen3-Audiobook-Converter.git
+   cd Qwen3-Audiobook-Converter
+   ```
+
+2. **Install Python dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Install FFmpeg** (required for audio processing) via your package manager (e.g. `sudo apt-get install ffmpeg` on Linux or `brew install ffmpeg` on macOS).
+
+4. **Run your Qwen Gradio voice server** and ensure it's accessible at `http://127.0.0.1:7860`.
+
+5. **Convert a document to audio:**
+
+   ```bash
+   # place your book file in the book_to_convert folder
+   cp MyBook.pdf book_to_convert/
+   # default custom voice mode
+   python audiobook_converter.py
+   # voice clone mode (provide a reference .wav)
+   python audiobook_converter.py --voice-clone --voice-sample path/to/reference.wav
+   ```
+
+The script will generate audio files in the `audiobooks` folder.
+
+## Business & Entrepreneurial Value
+
+- **Licensing & subscriptions:** Package the converter as a paid API or SaaS for publishers and content platforms who need automated audiobook production; offer tiered pricing for number of conversions or advanced voices.
+- **Custom integrations & upsells:** Embed the converter into e-book stores, education platforms or digital libraries, charging for premium voices, priority processing, or enterprise-grade support.
+- **Scalability & efficiency:** Intelligent chunking and caching enable high-volume processing without excessive infrastructure, lowering operating costs and supporting large catalogs.
+- **Partnership opportunities:** Collaborate with voice artists or AI speech providers to offer additional voices and languages for an OEM licensing fee.
+
+## Consumer Value
+
+- **Accessibility & inclusivity:** Allows readers with visual impairments or busy lifestyles to enjoy books in audio format across multiple document types.
+- **Personalized narration:** Voice cloning lets users create audiobooks with a familiar voice, increasing engagement and emotional connection.
+- **Convenience & speed:** Automatically generates high-quality speech with progress tracking and error recovery, saving users hours compared to manual narration.
+- **Privacy & control:** Runs locally with an optional self-hosted voice server, so sensitive documents stay private and no external data transfer is required.
+
+Submit PR
 ```
 
-## 📄 License
+
+## Business & Entrepreneurial Value
+
+- **Licensing & Subscriptions**: Generate revenue through paid subscription plans or licensing the audiobook converter for commercial platforms. Offer premium features like higher audio quality, advanced voice cloning, and priority support.
+- **Custom Integrations & Upsells**: Provide professional services for integrating the converter into e reading apps, LMS platforms, or content management systems. Upsell custom voice models or analytics dashboards to publishers and education providers.
+- **Scalability & Efficiency**: Automate audiobook production for large-scale content libraries, reducing manual narration costs and accelerating time to‑market for audio releases. Leverage cloud infrastructure to handle high volumes on demand.
+- **Partnership Opportunities**: Collaborate with publishers, educational institutions, or accessibility organizations to offer co‑branded solutions and share subscription revenues. Extend the platform with APIs for third‑party developers.
+
+## Consumer Value
+
+- **Accessibility & Inclusivity**: Transforms documents into high‑quality audio, making books and study materials more accessible to visually impaired or busy users who prefer listening over reading.
+- **Personalized Narration**: Users can choose between built‑in professional voices or clone their own voice for a personalized touch, improving engagement and comprehension.
+- **Convenience & Speed**: Batch processing and automatic chapter detection enable rapid conversion, saving users time compared to manual narration. Offline inference ensures quick responses without relying on external services.
+- **Privacy & Control**: The converter runs locally on user hardware, so source documents and generated audio remain private. Users retain full control over their audio data and custom voices.
+ 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
